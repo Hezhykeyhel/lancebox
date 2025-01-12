@@ -9,7 +9,7 @@ import { Image } from './Image';
 import { fullLogo } from '@/assets/pngImagePack';
 import RfValue from '@/helpers/RfValue';
 import { Text } from './Typography';
-import { TouchableOpacity } from './TouchableOpacity';
+import TouchableOpacity from './TouchableOpacity/TouchableOpacity';
 
 const CustomDrawerContent = (props: any) => {
   return (

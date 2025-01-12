@@ -1,18 +1,18 @@
-import { VariantProps } from "@shopify/restyle";
-import React, { FC } from "react";
-import { ActivityIndicator } from "react-native";
+import { VariantProps } from '@shopify/restyle';
+import React, { FC } from 'react';
+import { ActivityIndicator } from 'react-native';
 
-import { Text, TextProps } from "@/shared/components/Typography";
-import { Theme, useTheme } from "@/shared/theme";
-import { PaletteType } from "@/shared/theme/palette";
+import { Text, TextProps } from '@/shared/components/Typography';
+import { Theme, useTheme } from '@/shared/theme';
+import { PaletteType } from '@/shared/theme/palette';
 
-import { BaseButton, BaseButtonProps } from "./BaseButton";
-import { Box, BoxProps } from "../Box";
+import { BaseButton, BaseButtonProps } from './BaseButton';
+import { Box, BoxProps } from '../Box';
 
 type PrimaryButtonProps = BaseButtonProps &
-  VariantProps<Theme, "textVariants", "labelVariant"> & {
+  VariantProps<Theme, 'textVariants', 'labelVariant'> & {
     label: string | JSX.Element;
-    labelProps?: Omit<TextProps, "children">;
+    labelProps?: Omit<TextProps, 'children'>;
     isLoading?: boolean;
     loadingIconColor?: PaletteType;
     containerProps?: BoxProps;
@@ -31,7 +31,7 @@ const PrimaryButton: FC<PrimaryButtonProps> = props => {
 
   const theme = useTheme();
 
-  const activityIndicatorColor = theme.colors[loadingIconColor ?? "whiteColor"];
+  const activityIndicatorColor = theme.colors[loadingIconColor ?? 'whiteColor'];
 
   return (
     <BaseButton {...rest}>
@@ -40,7 +40,7 @@ const PrimaryButton: FC<PrimaryButtonProps> = props => {
         flexDirection="row"
         justifyContent="center"
         {...containerProps}>
-        {typeof label === "string" ? (
+        {typeof label === 'string' ? (
           <Text variant={labelVariant} {...labelProps}>
             {label}
           </Text>

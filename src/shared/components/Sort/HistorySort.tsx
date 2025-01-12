@@ -1,6 +1,6 @@
 import { SvgIcon } from '@/assets/SvgIcon';
 import { Box } from '@/shared/components/Box';
-import { TouchableOpacity } from '@/shared/components/TouchableOpacity';
+import TouchableOpacity from '@/shared/components/TouchableOpacity/TouchableOpacity';
 import { Text } from '@/shared/components/Typography';
 
 import { horizontalScale } from '@/shared/theme';

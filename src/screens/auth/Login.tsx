@@ -15,9 +15,9 @@ import { IconVector } from '@/assets/IconVector';
 import SimpleInput from '@/shared/components/TextInput/SimpleInput';
 import { useForm } from 'react-hook-form';
 import { SvgIcon } from '@/assets/SvgIcon';
-import { PrimaryButton } from '@/shared/components/Buttons/PrimaryButton';
 
 import { RootNavigationProps } from '@/navigations/types';
+import { PrimaryButton } from '@/shared/components/Buttons/PrimaryButton';
 
 interface LoginFormData {
   email: string;

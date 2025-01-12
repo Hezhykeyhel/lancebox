@@ -15,13 +15,13 @@ import { Box } from '@/shared/components/Box';
 import RfValue from '@/helpers/RfValue';
 import { IconVector } from '@/assets/IconVector';
 import { SvgIcon } from '@/assets/SvgIcon';
-import { PrimaryButton } from '@/shared/components/Buttons/PrimaryButton';
 import { RootNavigationProps } from '@/navigations/types';
-import { TouchableOpacity } from '@/shared/components/TouchableOpacity';
+import TouchableOpacity from '@/shared/components/TouchableOpacity/TouchableOpacity';
 import { Pressable } from '@/shared/components/Pressable';
 import { SafeAreaView } from '@/shared/components/SafeAreaView';
 import { check, request, PERMISSIONS, RESULTS } from 'react-native-permissions';
 import { showMessage } from 'react-native-flash-message';
+import { PrimaryButton } from '@/shared/components/Buttons/PrimaryButton';
 
 const Kyc: FC<RootNavigationProps<'LoginScreen'>> = ({ navigation }) => {
   const [userType, SetUserType] = useState<'businessOwner' | 'individual'>(

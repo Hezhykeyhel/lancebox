@@ -1,10 +1,10 @@
-import {VFC} from 'react';
-import {SvgProps} from 'react-native-svg';
+import { VFC } from 'react';
+import { SvgProps } from 'react-native-svg';
 
-import {Theme, useTheme} from '@/shared/theme';
-import {palette} from '@/shared/theme/palette';
+import { Theme, useTheme } from '@/shared/theme';
+import { palette } from '@/shared/theme/palette';
 
-import {svgIconPack, SvgIconPackType} from './svgIconPack';
+import { svgIconPack, SvgIconPackType } from './svgIconPack';
 
 export type SvgIconProps = Omit<SvgProps, 'color'> & {
   name: SvgIconPackType;
@@ -13,7 +13,7 @@ export type SvgIconProps = Omit<SvgProps, 'color'> & {
 };
 
 const SvgIcon: VFC<SvgIconProps> = props => {
-  const {name, size = 'xs', color = 'white', ...rest} = props;
+  const { name, size = 'xs', color = 'white', ...rest } = props;
 
   const theme = useTheme();
 
@@ -30,4 +30,4 @@ const SvgIcon: VFC<SvgIconProps> = props => {
   );
 };
 
-export {SvgIcon};
+export { SvgIcon };

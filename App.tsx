@@ -6,20 +6,20 @@ import { ThemeProvider } from '@shopify/restyle';
 import theme from './src/shared/theme';
 import BottomSheetProvider from './src/contexts/BottomSheet/provider';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import FlashMessage, { showMessage } from 'react-native-flash-message';
-import QueryClients from './src/config/QueryClient';
-import { QueryClientProvider } from '@tanstack/react-query';
+import FlashMessage from 'react-native-flash-message';
 import { palette } from './src/shared/theme/palette';
 import SplashScreen from 'react-native-splash-screen';
+import store from './src/store';
+import { Provider } from 'react-redux';
 
 function App(): React.JSX.Element {
   useEffect(() => {
     SplashScreen.hide();
   }, []);
   return (
-    <GestureHandlerRootView>
-      <ThemeProvider theme={theme.darkTheme}>
-        <QueryClientProvider client={QueryClients}>
+    <Provider store={store}>
+      <GestureHandlerRootView>
+        <ThemeProvider theme={theme.darkTheme}>
           <BottomSheetProvider>
             <NavigationContainer>
               <RootNavigation />
@@ -43,9 +43,9 @@ function App(): React.JSX.Element {
               } as TextStyle
             }
           />
-        </QueryClientProvider>
-      </ThemeProvider>
-    </GestureHandlerRootView>
+        </ThemeProvider>
+      </GestureHandlerRootView>
+    </Provider>
   );
 }
 

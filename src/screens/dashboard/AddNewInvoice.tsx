@@ -11,14 +11,12 @@ import SimpleInput from '@/shared/components/TextInput/SimpleInput';
 import { useFieldArray, useForm } from 'react-hook-form';
 import { TouchableOpacity } from '@/shared/components/TouchableOpacity';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { useFocusEffect } from '@react-navigation/native';
-import { BottomSheetModal } from '@gorhom/bottom-sheet';
 import InvoiceGenerator from '../pdf/InvoiceGenerator';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { showMessage } from 'react-native-flash-message';
 import { setFormData } from '@/store/invoiceSlice';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 // Currency options
 const CURRENCY_LIST = [
   { id: 'usd', value: 'USD' },
@@ -87,7 +85,6 @@ const AddNewInvoice: FC<AppNavigationProps<'DashboardScreen'>> = ({
     defaultValues: {
       clientName: '',
       yourName: '',
-      invoiceTitle: '',
       invoiceItems: [
         {
           description: '',
@@ -132,12 +129,12 @@ const AddNewInvoice: FC<AppNavigationProps<'DashboardScreen'>> = ({
     },
     resolver: yupResolver(step2Schema),
   });
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const onSubmitStep1 = async (data: any) => {
     try {
       setIsLoading(true);
-      dispatch(setFormData(data));
+      // setFormData(data);
       setStepForm(2);
     } catch (error) {
       console.error('Step 1 Submission Error:', error);
@@ -149,7 +146,7 @@ const AddNewInvoice: FC<AppNavigationProps<'DashboardScreen'>> = ({
   const onSubmitStep2 = async (data: any) => {
     try {
       setIsLoading(true);
-      dispatch(setFormData((prev: any) => ({ ...prev, ...data })));
+      // setFormData((prev: any) => ({ ...prev, ...data }));
       setStepForm(3);
     } catch (error) {
       console.error('Step 2 Submission Error:', error);
@@ -157,15 +154,6 @@ const AddNewInvoice: FC<AppNavigationProps<'DashboardScreen'>> = ({
       setIsLoading(false);
     }
   };
-
-  useFocusEffect(
-    useCallback(() => {
-      return () => {
-        resetStep1();
-        resetStep2();
-      };
-    }, [resetStep1, resetStep2]),
-  );
 
   const calculateSubtotal = (items = [] as any) =>
     items.reduce(
@@ -208,9 +196,7 @@ const AddNewInvoice: FC<AppNavigationProps<'DashboardScreen'>> = ({
                   justifyContent={'space-between'}
                   alignItems="center">
                   <Box maxWidth="15%">
-                    <Text variant="regular10" color="gray400">
-                      Invoice Details
-                    </Text>
+                    <Text variant="regular10">Invoice Details</Text>
                   </Box>
                   <Box maxWidth="4%">
                     <Text variant="regular12">{'>'}</Text>
@@ -226,7 +212,9 @@ const AddNewInvoice: FC<AppNavigationProps<'DashboardScreen'>> = ({
                     </Text>
                   </Box>
                   <Box maxWidth="15%">
-                    <Text variant="regular10">Preview Invoice</Text>
+                    <Text variant="regular10" color="gray400">
+                      Preview Invoice
+                    </Text>
                   </Box>
                   <Box maxWidth="4%">
                     <Text variant="regular12" color="gray400">

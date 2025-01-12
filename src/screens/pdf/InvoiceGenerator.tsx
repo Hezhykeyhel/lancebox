@@ -3,7 +3,7 @@ import { Box } from '@/shared/components/Box';
 import { Text } from '@/shared/components/Typography';
 import RNHTMLtoPDF from 'react-native-html-to-pdf';
 import React, { useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
+// import { useNavigation } from '@react-navigation/native';
 import {
   TouchableOpacity,
   StyleSheet,
@@ -18,7 +18,7 @@ const InvoiceGenerator = () => {
   const [loading, setLoading] = useState(false);
   const [showDownloadModal, setShowDownloadModal] = useState(false);
   const [showSaveModal, setShowSaveModal] = useState(false);
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
 
   const generatePDF = async () => {
     try {
@@ -234,7 +234,7 @@ const InvoiceGenerator = () => {
                 borderRadius="lg"
                 onPress={() => {
                   setShowSaveModal(false);
-                  navigation.replace('DashboardScreen');
+                  // navigation.replace('DashboardScreen');
                 }}
                 flex={1}
                 padding="md">

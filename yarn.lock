@@ -2850,24 +2850,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/query-core@npm:5.62.16":
-  version: 5.62.16
-  resolution: "@tanstack/query-core@npm:5.62.16"
-  checksum: 96e712dba70b9234884108ecac2fa05ae588f7a1758377d80aa30d4e830f00cbef95309d2806828ca224d1db51e3c8364857a6f3581edb989f2f16cb98ad0f26
-  languageName: node
-  linkType: hard
-
-"@tanstack/react-query@npm:^5.63.0":
-  version: 5.63.0
-  resolution: "@tanstack/react-query@npm:5.63.0"
-  dependencies:
-    "@tanstack/query-core": 5.62.16
-  peerDependencies:
-    react: ^18 || ^19
-  checksum: 672009de2380708609603df9838666cdaf8fe8ece4f09f267c1738959adcfc8b8b27eac34ac29ab569f1220eeed851e0f59f3ddc19c1af9de565b22f0725ccbf
-  languageName: node
-  linkType: hard
-
 "@trysound/sax@npm:0.2.0":
   version: 0.2.0
   resolution: "@trysound/sax@npm:0.2.0"
@@ -3308,7 +3290,6 @@ __metadata:
     "@react-navigation/native-stack": ^7.2.0
     "@reduxjs/toolkit": ^2.5.0
     "@shopify/restyle": ^2.4.4
-    "@tanstack/react-query": ^5.63.0
     "@types/crypto-js": ^4.2.2
     "@types/lodash": ^4.17.14
     "@types/numeral": ^2.0.5
