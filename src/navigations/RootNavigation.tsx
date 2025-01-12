@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootStacksParameterList } from './types';
 import AuthenticationStack from './AuthenticationStack';
 import Kyc from '@/screens/kyc';
-import DrawerNavigation from './DrawerNaviagtion';
+import DrawerNavigation from './DrawNavigation';
 import AddNewInvoice from '@/screens/dashboard/AddNewInvoice';
 
 const Stack = createNativeStackNavigator<RootStacksParameterList>();

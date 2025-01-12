@@ -10,7 +10,6 @@ import SelectInput from '@/shared/components/SelectInput/Index';
 import SimpleInput from '@/shared/components/TextInput/SimpleInput';
 import { useFieldArray, useForm } from 'react-hook-form';
 import { TouchableOpacity } from '@/shared/components/TouchableOpacity';
-import { useInvoiceStore } from '../../store/index';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { useFocusEffect } from '@react-navigation/native';
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
@@ -18,6 +17,8 @@ import InvoiceGenerator from '../pdf/InvoiceGenerator';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { showMessage } from 'react-native-flash-message';
+import { setFormData } from '@/store/invoiceSlice';
+import { useDispatch } from 'react-redux';
 // Currency options
 const CURRENCY_LIST = [
   { id: 'usd', value: 'USD' },
@@ -131,11 +132,12 @@ const AddNewInvoice: FC<AppNavigationProps<'DashboardScreen'>> = ({
     },
     resolver: yupResolver(step2Schema),
   });
+  const dispatch = useDispatch();
 
   const onSubmitStep1 = async (data: any) => {
     try {
       setIsLoading(true);
-      // setFormData(data);
+      dispatch(setFormData(data));
       setStepForm(2);
     } catch (error) {
       console.error('Step 1 Submission Error:', error);
@@ -147,7 +149,7 @@ const AddNewInvoice: FC<AppNavigationProps<'DashboardScreen'>> = ({
   const onSubmitStep2 = async (data: any) => {
     try {
       setIsLoading(true);
-      // setFormData2(prev => ({ ...prev, ...data }));
+      dispatch(setFormData((prev: any) => ({ ...prev, ...data })));
       setStepForm(3);
     } catch (error) {
       console.error('Step 2 Submission Error:', error);

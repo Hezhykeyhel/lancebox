@@ -10,10 +10,15 @@ import { TouchableOpacity } from '@/shared/components/TouchableOpacity';
 import { Image } from '@/shared/components/Image';
 import { placeholder } from '@/assets/pngImagePack';
 import { ScrollView } from 'react-native';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
 
 const DashboardScreen: FC<AppNavigationProps<'DashboardScreen'>> = ({
   navigation,
 }) => {
+  const invoiceItemsLength = useSelector(
+    (state: RootState) => state.invoiceStore.invoiceItems.length,
+  );
   return (
     <MainLayout hideBackButton HeaderTitle={'Dashboard'}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -55,7 +60,7 @@ const DashboardScreen: FC<AppNavigationProps<'DashboardScreen'>> = ({
               Invoices created
             </Text>
             <Text variant="semiBold18" color="secondary">
-              0
+              {invoiceItemsLength}
             </Text>
 
             <Text
