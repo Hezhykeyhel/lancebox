@@ -44,7 +44,9 @@ const CustomDrawerContent = (props: any) => {
         alignItems="center"
         columnGap="md">
         <SvgIcon name="logout2" size="mm" color="transparent" />
-        <Text color={'white'}>Logout</Text>
+        <Text variant="medium14" color={'white'}>
+          Logout
+        </Text>
       </TouchableOpacity>
     </DrawerContentScrollView>
   );

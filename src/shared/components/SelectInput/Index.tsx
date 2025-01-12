@@ -61,7 +61,7 @@ const SelectInput = <TFieldValues extends FieldValues>({
   errorMessage = '',
   inputColor = 'black',
   borderColor = 'white',
-  placeholderColor = 'gray200',
+  placeholderColor = 'gray400',
   iconColor = 'black',
   rules,
   isSearchEnabled = false,
@@ -136,7 +136,7 @@ const SelectInput = <TFieldValues extends FieldValues>({
                 borderWidth={0.5}
                 flexDirection="row"
                 justifyContent="space-between"
-                paddingHorizontal="md"
+                paddingHorizontal="sm"
                 paddingVertical="md">
                 <Box>
                   <Text
@@ -154,7 +154,7 @@ const SelectInput = <TFieldValues extends FieldValues>({
                     <SvgIcon
                       color={disabled ? 'gray' : iconColor}
                       name="chevronDown"
-                      size="m"
+                      size="mm"
                     />
                   )}
                 </Box>

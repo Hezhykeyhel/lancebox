@@ -7,6 +7,7 @@ import DashboardScreen from '@/screens/dashboard';
 import ProfileScreen from '@/screens/profile/Index';
 import ReceiptScreen from '@/screens/receipt';
 import SettingScreen from '@/screens/settings';
+import theme from '@/shared/theme';
 
 const Drawer = createDrawerNavigator();
 
@@ -24,6 +25,7 @@ export default function DrawerNavigation() {
           marginVertical: 5,
         },
         drawerLabelStyle: {
+          ...theme.lightTheme.textVariants.regular16,
           fontSize: 16,
           color: '#FFF',
         },

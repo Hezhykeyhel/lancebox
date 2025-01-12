@@ -1,6 +1,6 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {RootStacksParameterList} from './types';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { RootStacksParameterList } from './types';
 import AuthenticationStack from './AuthenticationStack';
 import Kyc from '@/screens/kyc';
 import DrawerNavigation from './DrawerNaviagtion';
@@ -13,7 +13,7 @@ export default function RootNavigation() {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        animation: 'slide_from_left',
+        animation: 'slide_from_right',
         animationDuration: 50,
         gestureEnabled: false,
         animationTypeForReplace: 'push',

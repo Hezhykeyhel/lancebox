@@ -59,7 +59,7 @@ const DashboardScreen: FC<AppNavigationProps<'DashboardScreen'>> = ({
             </Text>
 
             <Text
-              variant="semiBold14"
+              variant="bold14"
               textDecorationLine={'underline'}
               color="secondary">
               View All

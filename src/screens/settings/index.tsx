@@ -1,115 +1,29 @@
-/* eslint-disable react-native/no-inline-styles */
-import RfValue from '@/helpers/RfValue';
-import { AppNavigationProps } from '@/navigations/types';
-import { Box } from '@/shared/components/Box';
-import { ScrollBox } from '@/shared/components/ScrollBox';
-import Tile from '@/shared/components/Tile';
-import { Text } from '@/shared/components/Typography';
-import MainLayout from '@/shared/layout/MainLayout';
 import React, { FC } from 'react';
 
-const SettingScreen: FC<AppNavigationProps<'ProfileScreen'>> = ({
-  navigation,
-}) => {
+import { AppNavigationProps } from '@/navigations/types';
+import { Box } from '@/shared/components/Box';
+import MainLayout from '@/shared/layout/MainLayout';
+import LottieView from 'lottie-react-native';
+import { comingSoon } from '@/assets/lottie';
+import { Text } from '@/shared/components/Typography';
+
+const Settings: FC<AppNavigationProps<'Settings'>> = ({ navigation }) => {
   return (
-    <MainLayout hideBackButton HeaderTitle={'Dashboard'}>
-      <ScrollBox showsVerticalScrollIndicator={false}>
-        <Box>
-          <Text variant="bold16">Settings</Text>
-          <Text variant="regular14" marginTop="sm" color={'gray'}>
-            Manage your experiences here
-          </Text>
-          <Box marginTop="lg" />
-          <Tile
-            backgroundColor="white"
-            leftIconColor="white"
-            leftIconSvgSize="lg"
-            onPress={() => {}}
-            tileContainerStyle={{
-              marginHorizontal: 'md',
-              marginBottom: 'md',
-              borderRadius: 'mmd',
-              borderWidth: 1.5,
-              borderColor: 'transparent',
-              backgroundColor: 'white',
-              paddingRight: 'sm',
-
-              style: {
-                borderWidth: 1,
-                borderColor: '#E3E6EA',
-                borderRadius: RfValue(10),
-                paddingVertical: RfValue(15),
-              },
-            }}
-            title="Change Location"
-            titleColor="black"
-            titleStyle={{
-              lineHeight: RfValue(25),
-            }}
-            titleVariant="medium14"
-          />
-          <Box marginTop="md" />
-          <Tile
-            backgroundColor="white"
-            leftIconColor="white"
-            leftIconSvgSize="lg"
-            onPress={() => {}}
-            tileContainerStyle={{
-              marginHorizontal: 'md',
-              marginBottom: 'md',
-              borderRadius: 'mmd',
-              borderWidth: 1.5,
-              borderColor: 'transparent',
-              backgroundColor: 'white',
-              paddingRight: 'sm',
-
-              style: {
-                borderWidth: 1,
-                borderColor: '#E3E6EA',
-                borderRadius: RfValue(10),
-                paddingVertical: RfValue(15),
-              },
-            }}
-            title="Add Another Profile"
-            titleColor="black"
-            titleStyle={{
-              lineHeight: RfValue(25),
-            }}
-            titleVariant="medium14"
-          />
-          <Box marginTop="md" />
-          <Tile
-            backgroundColor="white"
-            leftIconColor="white"
-            leftIconSvgSize="lg"
-            onPress={() => {}}
-            tileContainerStyle={{
-              marginHorizontal: 'md',
-              marginBottom: 'md',
-              borderRadius: 'mmd',
-              borderWidth: 1.5,
-              borderColor: 'transparent',
-              backgroundColor: 'white',
-              paddingRight: 'sm',
-
-              style: {
-                borderWidth: 1,
-                borderColor: '#E3E6EA',
-                borderRadius: RfValue(10),
-                paddingVertical: RfValue(15),
-              },
-            }}
-            title="Dectivate Accounts"
-            titleColor="black"
-            titleStyle={{
-              lineHeight: RfValue(25),
-            }}
-            titleVariant="medium14"
-          />
-        </Box>
-      </ScrollBox>
+    <MainLayout hideBackButton HeaderTitle="Profile">
+      <Box flex={1} alignItems="center" justifyContent="center">
+        <LottieView
+          style={{ width: 150, height: 150, marginTop: -100 }}
+          source={comingSoon}
+          autoPlay
+          loop
+        />
+        <Text variant="bold12" marginTop="lg">
+          Settings feature is coming soon
+        </Text>
+      </Box>
     </MainLayout>
   );
 };
 
-export default SettingScreen;
+export default Settings;
+``;

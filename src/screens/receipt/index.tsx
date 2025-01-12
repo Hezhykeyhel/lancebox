@@ -1,27 +1,31 @@
-import { AppNavigationProps } from '@/navigations/types';
-import { Box } from '@/shared/components/Box';
-
-import { ScrollBox } from '@/shared/components/ScrollBox';
-import { Text } from '@/shared/components/Typography';
-import MainLayout from '@/shared/layout/MainLayout';
-
 import React, { FC } from 'react';
 
-const ReceiptScreen: FC<AppNavigationProps<'DashboardScreen'>> = ({
+import { AppNavigationProps } from '@/navigations/types';
+import { Box } from '@/shared/components/Box';
+import MainLayout from '@/shared/layout/MainLayout';
+import LottieView from 'lottie-react-native';
+import { comingSoon } from '@/assets/lottie';
+import { Text } from '@/shared/components/Typography';
+
+const ReceiptScreen: FC<AppNavigationProps<'ReceiptScreen'>> = ({
   navigation,
 }) => {
   return (
-    <MainLayout hideBackButton HeaderTitle={'Dashboard'}>
-      <ScrollBox showsVerticalScrollIndicator={false}>
-        <Box>
-          <Text variant="bold16">Receipts</Text>
-          <Text variant="regular14" marginTop="sm" color={'gray'}>
-            View All Receipts
-          </Text>
-        </Box>
-      </ScrollBox>
+    <MainLayout hideBackButton HeaderTitle="Profile">
+      <Box flex={1} alignItems="center" justifyContent="center">
+        <LottieView
+          style={{ width: 150, height: 150, marginTop: -100 }}
+          source={comingSoon}
+          autoPlay
+          loop
+        />
+        <Text variant="bold12" marginTop="lg">
+          Receipt feature is coming soon
+        </Text>
+      </Box>
     </MainLayout>
   );
 };
 
 export default ReceiptScreen;
+``;
